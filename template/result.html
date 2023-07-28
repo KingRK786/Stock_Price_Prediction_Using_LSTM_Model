@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="icon" href="/static/image/logo.png">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_result.css') }}"> -->
+    <link rel="stylesheet" href="/static/style_result.css">
+    <script src="https://kit.fontawesome.com/3fd0393677.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="{{ url_for('home') }}"><img src="/static/image/logo.png"></a>
+        </div>
+        <div class="title">
+
+            <ul>
+                <li><a href="{{ url_for('home') }}"><i class="fa-solid fa-circle-info"></i> &nbsp;About Project</a></li>
+                <li><a href="{{ url_for('home') }}"><i class="fa-solid fa-people-group">&nbsp;&nbsp;</i>Team Members</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- Header -->
+
+    <!-- Top -->
+    <div class="top">
+        <h1>Prediction Result</h1>
+        <div class="stock-info">
+            <h2>{{ stock_info.longName }}</h2>
+            <div class="parent">
+                <div class="div1">
+                    <li><strong>Symbol:</strong> {{ stock_info.symbol }}</li>
+                </div>
+                <div class="div2">
+                    <li><strong>Current Price:</strong> {{ stock_info.currentPrice}}</li>
+                </div>
+                <div class="div3">
+                    <li><strong>Sector:</strong> {{ stock_info.sector }}</li>
+                </div>
+                <div class="div4">
+                    <li><strong>Industry:</strong> {{ stock_info.industry }}</li>
+                </div>
+                <div class="div5">
+                    <li><strong>Currency:</strong> {{ stock_info.currency }}</li>
+                </div>
+                <div class="div6">
+                    <li><strong>Website:</strong> {{ stock_info.website }}</li>
+                </div>
+                <div class="div7">
+                    <li>
+                        <h2>Summary:</h2> {{ stock_info.longBusinessSummary }}
+                    </li>
+                </div>
+            </div>
+        </div>
+        <div class="description">
+            <h2>Stock Statistics</h2>
+            {{ description | safe }}
+        </div>
+    </div>
+    <!-- Top -->
+
+    <!-- Middle -->
+    <div class="charts">
+        <h2>Charts</h2>
+        <div class="chart">
+            <h3>Closing Price vs Time Chart</h3>
+            <div class="box">
+                <div class="glass-box">
+                    <img src="data:image/png;base64,{{ fig1 }}" alt="Closing Price vs Time Chart">
+                </div>
+            </div>
+        </div>
+
+        <div class="chart">
+            <h3>Closing Price vs Time Chart with 100 Moving Average</h3>
+            <div class="box">
+                <div class="glass-box">
+                    <img src="data:image/png;base64,{{ fig2 }}"
+                        alt="Closing Price vs Time Chart with 100 Moving Average ">
+                </div>
+            </div>
+        </div>
+        <div class="chart">
+            <h3>Closing Price vs Time Chart with 100 & 200 Moving Average</h3>
+            <div class="box">
+                <div class="glass-box">
+                    <img src="data:image/png;base64,{{ fig3 }}"
+                        alt="Closing Price vs Time Chart with 100 & 200 Moving Average">
+                </div>
+            </div>
+        </div>
+        <div class="chart">
+            <h3>Prediction vs Original Closing Price</h3>
+            <div class="box">
+                <div class="glass-box">
+                    <img src="data:image/png;base64,{{ fig4 }}" alt="Prediction vs Original Closing Price">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Middle -->
+        <div class="forecasts1">
+        <h2>Forecasts</h2>
+        <ul>
+            {% for i, period in enumerate([15, 30, 45]) %}
+            <li>Forecast for {{ period }} days: {{ forecasts[i][0] }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="metrics">
+        <h2>Evaluation Metrics</h2>
+        <div class="error">
+            <p><strong>Mean Absolute Error:</strong> {{ mae }}</p>
+            <p><strong>Mean Squared Error:</strong> {{ mse }}</p>
+            <p><strong>Accuracy:</strong> {{ accuracy }}</p>
+        </div>
+    </div>
+    <!-- Middle -->
+    <!-- Footer -->
+    <footer>
+        <div class="container1">
+            <div class="box1">
+                <h4>© Stock Price Prediction 2023</h4>
+            </div>
+            <div class="box2">
+                <ul>
+                    <li><a href=""><i class="fa-brands fa-instagram fa-xl"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-facebook fa-xl"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-twitter fa-xl"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-envelope fa-xl"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer -->
+
+</body>
+
+</html>

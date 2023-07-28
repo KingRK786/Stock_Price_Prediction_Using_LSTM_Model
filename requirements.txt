@@ -1,0 +1,13 @@
+flask 
+pandas 
+numpy 
+matplotlib 
+scikit-learn 
+keras 
+yfinance 
+requests
+jinja2
+layers
+Gunicorn
+tensorflow
+gevent

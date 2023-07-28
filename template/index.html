@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Prediction</title>
+    <link rel="icon" href="/static/image/logo.png">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="icon" href="/static/image/logo.png">
+    <script src="https://kit.fontawesome.com/3fd0393677.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+</head>
+
+<body>
+
+    <!----------------------------------------------------- Header ----------------------------------------------------->
+
+    <header>
+        <div class="logo">
+            <a href="{{ url_for('home') }}"><img src="/static/image/logo.png"></a>
+        </div>
+        <div class="title">
+
+            <ul>
+                <li><a href="#middle">About Project</a></li>
+                <li><a href="#team">Team Members</a></li>
+                <li class="to_login_page"><a href="{{ url_for('login') }}" ><i class="fa-solid fa-right-to-bracket"></i>&nbsp; Sign In</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!----------------------------------------------------- Header ----------------------------------------------------->
+
+    <!----------------------------------------------------- Top ----------------------------------------------------->
+    <div class="top">
+        <!-- Introduction/Summary -->
+        <section class="introduction">
+            <h1>Stock Price Prediction</h1>
+            <p>Enter a stock symbol below to get a prediction.</p>
+        </section>
+
+        <!-- Stock Prediction Form -->
+        <section class="prediction-form">
+            <form action="/predict" method="post">
+                <input type="text" id="stock-input" name="stock-input" required autocomplete="off"
+                    placeholder="Enter Stock Symbol">
+                <!-- <input type="number" id="forecast-periods" name="forecast-periods" required> -->
+                <button type="submit" class="button">Predict</button>
+            </form>
+        </section>
+    </div>
+
+    <!----------------------------------------------------- Top ----------------------------------------------------->
+
+    <!----------------------------------------------------- Middle ----------------------------------------------------->
+
+    <div class="middle" id="middle">
+        <div class="middle1">
+            <img src="/static/image/about.jpg" alt="">
+            <ul>
+                <h2>About the Project</h2>
+                <p>Are you looking to invest in the stock market? Do you want to make informed decisions and
+                    maximize your profits? Our Stock Market Prediction project is here to help!</p>
+            </ul>
+        </div>
+        <div class="middle1">
+            <ul>
+                <h2>Main Features</h2>
+                <p>
+                    <li>Market Performance Prediction: We utilize various machine learning techniques to predict the
+                        market performance of SEBI (Securities and Exchange Board of India) on day closing.</li>
+                    <li>Technology Exploration: We stay up-to-date with the latest technologies used in stock market
+                        prediction to provide you with the most accurate and reliable insights.</li>
+                    <li>Stock Trading Assistance: Our tools and insights assist individual investors in navigating the
+                        stock market and making informed trading decisions.</li>
+                    <li>Profit Maximization: We help you save income and maximize your profits by identifying profitable
+                        trading opportunities based on predicted market trends.</li>
+                </p>
+            </ul>
+            <img src="/static/image/mainfeature.png" alt="">
+        </div>
+        <div class="middle1">
+            <img src="/static/image/work.png" alt="">
+            <ul>
+                <h2>How It Works</h2>
+                <p>Our system analyzes historical stock market data, including factors such as open, close, high, and
+                    low values.
+                    By considering these factors and employing advanced machine learning techniques, we generate
+                    predictions for future market trends. These predictions are then visualized through
+                    interactive charts and graphs, helping you gain a better understanding of the stock market behavior.
+                </p>
+            </ul>
+        </div>
+    </div>
+
+    <!----------------------------------------------------- Middle ----------------------------------------------------->
+
+    <!----------------------------------------------------- Team Members ----------------------------------------------------->
+
+    <section class="team-members" id="team">
+        <h2>Our Members</h2>
+        <p>"Our team consists of a group of highly skilled and passionate individuals dedicated to delivering
+            exceptional results. With a diverse range of expertise and backgrounds, we collaborate seamlessly to
+            tackle complex challenges and provide innovative solutions. From data analysis and machine learning to
+            web development and design, our team brings together a unique blend of skills that enables us to deliver
+            high-quality projects.
+            We are committed to exceeding client expectations and staying at the forefront of
+            technology to drive success. Together, we strive to make a positive impact and create meaningful
+            experiences for our clients."</p>
+        <ul class="cardinfo">
+            <li>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="/static/image/tarun.jpg" alt="Profile Picture">
+                        <h3>Tushar Sharma</h3>
+                    </div>
+                    <p>Frontend Developer</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/tarun171977/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/tarun142002" class="social-icon"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="/static/image/Rohit.jpg" alt="Profile Picture">
+                        <h3>Rohit Khandelwal</h3>
+                    </div>
+                    <p>Machine Learning Engineer</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/rohitkhandelwal02/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/KingRK786" class="social-icon"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="/static/image/gupta1.jpg" alt="Profile Picture">
+                        <h3>Tushar Gupta</h3>
+                    </div>
+                    <p>Backend Developer</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/tushar-gupta-584a23205/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/tushargupta25860" class="social-icon"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </li>
+            <!-- Add more team member cards here -->
+        </ul>
+    </section>
+
+    <!----------------------------------------------------- Team Members ----------------------------------------------------->
+
+    <!------------------------------------------------------- Footer ----------------------------------------------------->
+    <footer>
+        <div class="container1">
+            <div class="box1">
+                <h4>© Stock Price Prediction 2023</h4>
+            </div>
+            <div class="box2">
+                <ul>
+                    <li><a href=""><i class="fa-brands fa-instagram fa-xl"></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-facebook fa-xl"></i></i></a></li>
+                    <li><a href=""><i class="fa-brands fa-twitter fa-xl"></i></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-envelope fa-xl"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!------------------------------------------------------- Footer ----------------------------------------------------->
+
+    <!------------------------------------------------------- Script ----------------------------------------------------->
+
+    <script src="/static/index.js">
+    </script>
+
+    <!------------------------------------------------------- Script ----------------------------------------------------->
+
+</body>
+
+</html>
